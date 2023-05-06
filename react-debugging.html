@@ -63,24 +63,28 @@
           padding: "10px"
         }
         // No need to change anything ABOVE this line ^
-
+        // 1st adding <></> wraping whole return content
+        // 2nd adding {drawCard} for draw a card button
+        // 3rd fix shffle button onclick event to onClick 
         return (
-          <h1>Draw a Card</h1>
-          <button onClick={}>
-            Click to Draw a Card
-          </button>
-          <button onclick={shuffle}>
-            Return Cards and Shuffle Deck
-          </button>
-          <div style={handStyles}>
-            {hand.map((card, index) => {
-              return (
-                <div style={cardStyles} key={index}>
-                  {card}
-                </div>
-              )
-            })}
-          </div>
+          <>
+            <h1>Draw a Card</h1>
+            <button onClick={drawCard}>
+              Click to Draw a Card
+            </button>
+            <button onClick={shuffle}>
+              Return Cards and Shuffle Deck
+            </button>
+            <div style={handStyles}>
+              {hand.map((card, index) => {
+                return (
+                  <div style={cardStyles} key={index}>
+                    {card}
+                  </div>
+                )
+              })}
+            </div>
+          </>
         )
       }
 
