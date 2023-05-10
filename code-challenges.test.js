@@ -140,8 +140,8 @@
 
   describe("accSum", () => {
     it("returns an array of the accumulating sum.", () => {
-      expect(accSum(accountTransactions1)).toEqual([100, -17, -23, -9]),
-      expect(accSum(accountTransactions2)).toEqual([250, -89, 100, -96]),
+      expect(accSum(accountTransactions1)).toEqual([100, 83, 60, 51]),
+      expect(accSum(accountTransactions2)).toEqual([250, 161, 261, 165]),
       expect(accSum(accountTransactions3)).toEqual([])
     })
   })
@@ -183,11 +183,10 @@ const accountTransactions3 = []
 // pass test
 
 const accSum = (array) => {
-  for(let i = 1; i < array.length; i++) {
-   array.map(array => array[i] = array[i] + array[i - 1])
+  let sum = 0
+return array.map(value => sum += value)
   }
-  return array
-}
+
 
   // // test pass:
   // PASS  ./code-challenges.test.js
